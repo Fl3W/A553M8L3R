@@ -1,0 +1,33 @@
+#6
+#a
+loadi 5
+store 100
+#b
+loadi 50
+store 101
+
+alpakka:
+#aktual Funktions
+load 101
+cmp 100
+jmpn bkleiner
+
+#b größer
+load 101
+sub 100
+store 101
+
+jmp hans
+#agrößer
+bkleiner:
+load 100
+sub 101
+store 100
+
+hans:
+#schleife
+load 100
+cmp 101
+jmpnz alpakka
+store 110
+hold

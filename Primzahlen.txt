@@ -1,0 +1,51 @@
+#boolean=true
+loadi 1
+store 110
+
+#I=2
+loadi 2
+store 101
+
+#Zu prüfende Zahl !=0
+loadi 3
+store 100
+
+alpakka:
+
+#Schleife1 -> wenn nicht IxI<=n dann zum Ende springen (Sprung bei !=0 und pos)
+load 101
+mul 101
+sub 100
+jmpp ende
+
+#Schleife2 -> nur zum Ende springen wenn boolean false (negativ)
+load 110
+subi 1
+jmpn endeC
+
+#Berechnung p
+load 100
+div 101
+mul 101
+store 105
+
+#P=N Sprung nur wenn falsch (Sprung bei !=0)
+jmpnz wrong
+load 110
+subi 1
+store 110
+wrong:
+
+
+
+#i=i+1
+load 101
+addi 1
+store 101
+
+#Sprung zur bedingten Schleife
+jmp alpakka
+
+endeC:
+ende:
+hold
